@@ -77,9 +77,47 @@
             color: rgb(32, 236, 5);
             font-weight: bold;
         }
-        input.operator:hover
-        {
+
+        input.operator:hover {
             color: white;
+        }
+
+        /* Responsive for Mobile only <480px */
+        @media only screen and (max-width:480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                top: 0;
+                left: 0;
+                padding: 0;
+                position: relative;
+                width: 100%;
+                height: 97vh;
+            }
+
+            .result input {
+                padding: 5rem .5rem;
+                margin: 0;
+                font-weight: bold;
+                height: fit-content;
+            }
+
+            .numberButtons input {
+                width: 16.5vw;
+                height: 10vh;
+                font-weight: bolder;
+                font-size: 1.7em;
+            }
+
+            #equal {
+                background-color: blue;
+                font-size: 2em;
+            }
+            .buttons{
+                margin-top: 6rem;
+            }
         }
     </style>
 </head>
@@ -90,35 +128,37 @@
             <div class="result">
                 <input type="text" name="result" id="result">
             </div>
-            <div class="numberButtons">
-                <input type="button" value="AC" class="operator" onclick="result.value = '' ">
-                <input type="button" value="DEL" class="operator"
-                    onclick="result.value = result.value.toString().slice(0,-1) ">
-                <input type="button" value="." class="operator" onclick="result.value += '.' ">
-                <input type="button" value="/" class="operator" onclick="result.value += '/' ">
-            </div>
-            <div class="numberButtons">
-                <input type="button" value="7" onclick="result.value += '7' ">
-                <input type="button" value="8" onclick="result.value += '8' ">
-                <input type="button" value="9" onclick="result.value += '9' ">
-                <input type="button" value="*" class="operator" onclick="result.value += '*' ">
-            </div>
-            <div class="numberButtons">
-                <input type="button" value="4" onclick="result.value += '4' ">
-                <input type="button" value="5" onclick="result.value += '5' ">
-                <input type="button" value="6" onclick="result.value += '6' ">
-                <input type="button" value="-" class="operator" onclick="result.value += '-' ">
-            </div>
-            <div class="numberButtons">
-                <input type="button" value="1" onclick="result.value += '1' ">
-                <input type="button" value="2" onclick="result.value += '2' ">
-                <input type="button" value="3" onclick="result.value += '3' ">
-                <input type="button" value="+" class="operator" onclick="result.value += '+' ">
-            </div>
-            <div class="numberButtons">
-                <input type="button" value="00" onclick="result.value += '00' ">
-                <input type="button" value="0" onclick="result.value += '0' ">
-                <input type="button" id="equal" value="=" onclick="result.value = eval(result.value)">
+            <div class="buttons">
+                <div class="numberButtons">
+                    <input type="button" value="AC" class="operator" onclick="result.value = '' ">
+                    <input type="button" value="DEL" class="operator"
+                        onclick="result.value = result.value.toString().slice(0,-1) ">
+                    <input type="button" value="." class="operator" onclick="result.value += '.' ">
+                    <input type="button" value="/" class="operator" onclick="result.value += '/' ">
+                </div>
+                <div class="numberButtons">
+                    <input type="button" value="7" onclick="result.value += '7' ">
+                    <input type="button" value="8" onclick="result.value += '8' ">
+                    <input type="button" value="9" onclick="result.value += '9' ">
+                    <input type="button" value="*" class="operator" onclick="result.value += '*' ">
+                </div>
+                <div class="numberButtons">
+                    <input type="button" value="4" onclick="result.value += '4' ">
+                    <input type="button" value="5" onclick="result.value += '5' ">
+                    <input type="button" value="6" onclick="result.value += '6' ">
+                    <input type="button" value="-" class="operator" onclick="result.value += '-' ">
+                </div>
+                <div class="numberButtons">
+                    <input type="button" value="1" onclick="result.value += '1' ">
+                    <input type="button" value="2" onclick="result.value += '2' ">
+                    <input type="button" value="3" onclick="result.value += '3' ">
+                    <input type="button" value="+" class="operator" onclick="result.value += '+' ">
+                </div>
+                <div class="numberButtons">
+                    <input type="button" value="00" onclick="result.value += '00' ">
+                    <input type="button" value="0" onclick="result.value += '0' ">
+                    <input type="button" id="equal" value="=" onclick="result.value = eval(result.value)">
+                </div>
             </div>
         </div>
     </div>
